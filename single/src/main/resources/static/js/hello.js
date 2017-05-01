@@ -96,6 +96,7 @@
         .controller('home', function($http) {
             var self = this;
             $http.get('token').then(function(response) {
+                console.log(response.data.token);
                 $http({
                     url : 'http://localhost:9000',
                     method : 'GET',
@@ -103,7 +104,7 @@
                         'X-Auth-Token' : response.data.token
                     }
                 }).then(function(response) {
-                self.greeting = response.data;
+                    self.greeting = response.data;
                 });
             })
         });

@@ -33,4 +33,5 @@ public class SimpleController {
     public Map<String,String> token(HttpSession session) {
         return Collections.singletonMap("token", session.getId());
     }
+
 }
