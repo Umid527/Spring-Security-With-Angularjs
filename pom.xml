@@ -19,8 +19,9 @@
 		<!--<module>spring-session</module>-->
 		<module>proxy</module>
 		<module>proxy-ui</module>
-		<!--<module>oauth2-vanilla</module>-->
-		<!--<module>oauth2</module>-->
+		<module>oauth2-resource</module>
+		<module>oauth2-ui</module>
+		<module>oauth2-authserver</module>
 		<!--<module>double</module>-->
 		<!--<module>modular</module>-->
 	</modules>
