@@ -16,13 +16,15 @@
 		<module>single</module>
 		<!--<module>basic</module>-->
 		<module>vanilla</module>
-		<!--<module>spring-session</module>-->
 		<module>proxy</module>
 		<module>proxy-ui</module>
 		<module>oauth2-resource</module>
 		<module>oauth2-ui</module>
 		<module>oauth2-authserver</module>
-		<!--<module>double</module>-->
+		<module>double-ui</module>
+		<module>double-resource</module>
+		<module>double-gateway</module>
+
 		<!--<module>modular</module>-->
 	</modules>
 
