@@ -3,6 +3,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.UUID;
 
 
@@ -16,7 +17,7 @@ public class DoubleResourceController {
 
     @RequestMapping("/")
     public Message home() {
-        return new Message("Hello kele World ");
+        return new Message("Hello kele double-resource World ");
     }
 }
 
