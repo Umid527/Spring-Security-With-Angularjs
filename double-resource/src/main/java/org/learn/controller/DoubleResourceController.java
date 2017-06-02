@@ -1,12 +1,7 @@
 package org.learn.controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
-import java.security.Principal;
-=======
->>>>>>> 452fa9e47a16efd3c1ad86df13085533a516ba78
 import java.util.UUID;
 
 
@@ -20,11 +15,7 @@ public class DoubleResourceController {
 
     @RequestMapping("/")
     public Message home() {
-<<<<<<< HEAD
         return new Message("Hello kele double-resource World ");
-=======
-        return new Message("Hello kele World ");
->>>>>>> 452fa9e47a16efd3c1ad86df13085533a516ba78
     }
 }
 

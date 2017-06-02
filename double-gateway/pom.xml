@@ -25,7 +25,7 @@
 		<spring-cloud.version>Dalston.SR1</spring-cloud.version>
 	</properties>
 
-<<<<<<< HEAD
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -43,10 +43,6 @@
 			<artifactId>spring-session</artifactId>
 		</dependency>
 		<dependency>
-=======
-	<dependencies>
-		<dependency>
->>>>>>> 452fa9e47a16efd3c1ad86df13085533a516ba78
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zuul</artifactId>
 		</dependency>
@@ -68,7 +64,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -90,23 +85,6 @@
 			<version>2.1.1</version>
 		</dependency>
 	</dependencies>
-
-=======
-	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
->>>>>>> 452fa9e47a16efd3c1ad86df13085533a516ba78
-
 	<build>
 		<plugins>
 			<plugin>
