@@ -17,6 +17,7 @@ public class UiSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+<<<<<<< HEAD
 //        http
 //                .httpBasic()
 //                .and()
@@ -33,5 +34,16 @@ public class UiSecurity extends WebSecurityConfigurerAdapter {
                 .antMatchers("/index.html","/").permitAll()
 ;
 //                .anyRequest().authenticated();
+=======
+        http
+                .httpBasic()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .csrf().
+                csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+>>>>>>> 452fa9e47a16efd3c1ad86df13085533a516ba78
     }
 }
