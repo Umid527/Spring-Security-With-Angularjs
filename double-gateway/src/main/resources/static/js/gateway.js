@@ -22,24 +22,30 @@ angular.module('gateway', []).config(function ($httpProvider, $locationProvider,
 
         var authenticate = function(credentials, callback) {
 
+
             var headers = credentials ? {
                 authorization : "Basic "
                 + btoa(credentials.username + ":"
                     + credentials.password)
             } : {};
 
+            self.user = '';
             $http.get('user', {
                 headers : headers
             }).then(function(response) {
-                if (response.data.name) {
+                var data = response.data;
+                if (data.name) {
                     self.authenticated = true;
+                    self.user = data.name
+                    self.admin = data && data.roles && data.roles.indexOf("ROLE_ADMIN")>-1;
                 } else {
                     self.authenticated = false;
+                    self.admin = false;
                 }
-                callback && callback();
+                callback && callback(true);
             }, function() {
                 self.authenticated = false;
-                callback && callback();
+                callback && callback(false);
             });
 
         }
@@ -47,17 +53,17 @@ angular.module('gateway', []).config(function ($httpProvider, $locationProvider,
 
         self.credentials = {};
         self.login = function() {
-            authenticate(self.credentials, function() {
-                if (self.authenticated) {
-                    console.log("Login succeeded")
-                    self.error = false;
-                    self.authenticated = true;
-                } else {
-                    console.log("Login failed")
-                    self.error = true;
-                    self.authenticated = false;
-                }
+            authenticate(self.credentials, function(authenticated) {
+                self.authenticated = authenticated;
+                self.error = !authenticated;
             })
         };
+
+        self.logout = function() {
+            $http.post('logout', {}).finally(function() {
+                self.authenticated = false;
+                self.admin = false;
+            });
+        }
 
     });
