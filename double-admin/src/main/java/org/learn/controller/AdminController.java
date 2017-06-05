@@ -22,8 +22,6 @@ public class AdminController {
         map.put("name", user.getName());
         map.put("roles", AuthorityUtils.authorityListToSet(((Authentication) user)
                 .getAuthorities()));
-        System.out.println("----------------------------------");
-        System.out.println(map);
         return map;
     }
 }

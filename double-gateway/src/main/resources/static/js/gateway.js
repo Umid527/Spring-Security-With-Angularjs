@@ -36,7 +36,7 @@ angular.module('gateway', []).config(function ($httpProvider, $locationProvider,
                 var data = response.data;
                 if (data.name) {
                     self.authenticated = true;
-                    self.user = data.name
+                    self.user = data.name;
                     self.admin = data && data.roles && data.roles.indexOf("ROLE_ADMIN")>-1;
                 } else {
                     self.authenticated = false;
